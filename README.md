@@ -1,8 +1,11 @@
 
 # Chess Player movements and Highlights
 I added all possible movements and highlighted the chess player.
-Piece selected mouse left click 
+
+Piece selected mouse left click,
+
 mouse right click  moving piece
+
 ### Piece Movement Highlighting:
 Highlight possible moves for each type of chess piece:
 

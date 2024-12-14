@@ -11,5 +11,7 @@ namespace Chess.Scripts.Core
         {
             transform.position = ChessBoardPlacementHandler.Instance.GetTile(row, column).transform.position;
         }
+
+        
     }
 }

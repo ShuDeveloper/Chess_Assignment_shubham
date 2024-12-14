@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Diagnostics.CodeAnalysis;
+using Chess.Scripts.Core;
 
 [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
 public sealed class ChessBoardPlacementHandler : MonoBehaviour
@@ -50,12 +51,15 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour
 
         if (tile == null)
         {
-            Debug.LogError("Invalid row or column HighLght.");
+            Debug.LogError("Invalid row or column Highlight.");
             return;
         }
 
         //Instantiate(_highlightPrefab, tile.transform.position, Quaternion.identity, tile.transform);
         GameObject game = ObjectPooling.SharedInstance.GetPooledObject();
+        game.GetComponent<ChessPlayerPlacementHandler>().row = row;
+        game.GetComponent<ChessPlayerPlacementHandler>().column = col;
+
         if (game != null)
         {
             game.SetActive(true);
@@ -93,29 +97,29 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour
             }
         }
     }
-   
-        #region Highlight Testing
+  
+    #region Highlight Testing
 
-        // private void Start() {
-        //     StartCoroutine(Testing());
-        // }
+    // private void Start() {
+    //     StartCoroutine(Testing());
+    // }
 
-        // private IEnumerator Testing() {
-        //     Highlight(2, 7);
-        //     yield return new WaitForSeconds(1f);
-        //
-        //     ClearHighlights();
-        //     Highlight(2, 7);
-        //     Highlight(2, 6);
-        //     Highlight(2, 5);
-        //     Highlight(2, 4);
-        //     yield return new WaitForSeconds(1f);
-        //
-        //     ClearHighlights();
-        //     Highlight(7, 7);
-        //     Highlight(2, 7);
-        //     yield return new WaitForSeconds(1f);
-        // }
+    // private IEnumerator Testing() {
+    //     Highlight(2, 7);
+    //     yield return new WaitForSeconds(1f);
+    //
+    //     ClearHighlights();
+    //     Highlight(2, 7);
+    //     Highlight(2, 6);
+    //     Highlight(2, 5);
+    //     Highlight(2, 4);
+    //     yield return new WaitForSeconds(1f);
+    //
+    //     ClearHighlights();
+    //     Highlight(7, 7);
+    //     Highlight(2, 7);
+    //     yield return new WaitForSeconds(1f);
+    // }
 
-        #endregion
+    #endregion
 }

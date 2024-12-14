@@ -1,5 +1,5 @@
 
-# Chess Player movements and Highlight
+# Chess Player movements and Highlights
 I added all possible movements and highlighted the chess player.
 
 ### Piece Movement Highlighting:
